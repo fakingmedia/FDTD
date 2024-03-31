@@ -5,6 +5,7 @@
 #ifndef FDTD_SERIALFDTD_H
 #define FDTD_SERIALFDTD_H
 
+#include<cmath>
 #include<vector>
 
 using namespace std;
@@ -13,8 +14,11 @@ class serialFdtd {
 protected:
     const double c = 300000000;
 
-    vector<vector<vector<double>>> E;
-    vector<vector<vector<double>>> H;
+    vector<vector<vector<vector<double>>>> E; //电场强度(t,x,y,z)
+    vector<vector<vector<vector<double>>>> H; //磁场强度(t,x,y,z)
+    vector<vector<vector<vector<double>>>> J; //电流密度(t,x,y,z)
+    vector<vector<vector<vector<double>>>> M; //磁流密度(t,x,y,z)
+
     double epsilon; //媒介的介电常数
     double mju; //媒介的磁导率
     double sigmaE; //电导率
@@ -25,8 +29,12 @@ protected:
     double deltaX, deltaY, deltaZ; //x,y,z轴上的空间距离
 public:
     serialFdtd();
+
+    bool isStable();
+
     void updateE();
     void updateH();
+
     void show();
 };
 
