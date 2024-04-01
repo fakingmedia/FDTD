@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(FDTD main.cpp
         serialFdtd.cpp
-        serialFdtd.h)
+        serialFdtd.h
+        parallelFdtd.cpp
+        parallelFdtd.h)

@@ -57,6 +57,22 @@ build CMakeFiles/FDTD.dir/main.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/F
   TARGET_COMPILE_PDB = CMakeFiles\FDTD.dir\
   TARGET_PDB = FDTD.pdb
 
+build CMakeFiles/FDTD.dir/serialFdtd.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/serialFdtd.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\serialFdtd.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir
+  TARGET_COMPILE_PDB = CMakeFiles\FDTD.dir\
+  TARGET_PDB = FDTD.pdb
+
+build CMakeFiles/FDTD.dir/parallelFdtd.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/parallelFdtd.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\parallelFdtd.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir
+  TARGET_COMPILE_PDB = CMakeFiles\FDTD.dir\
+  TARGET_PDB = FDTD.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target FDTD
@@ -65,7 +81,7 @@ build CMakeFiles/FDTD.dir/main.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/F
 #############################################
 # Link the executable FDTD.exe
 
-build FDTD.exe: CXX_EXECUTABLE_LINKER__FDTD_Debug CMakeFiles/FDTD.dir/main.cpp.obj
+build FDTD.exe: CXX_EXECUTABLE_LINKER__FDTD_Debug CMakeFiles/FDTD.dir/main.cpp.obj CMakeFiles/FDTD.dir/serialFdtd.cpp.obj CMakeFiles/FDTD.dir/parallelFdtd.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\FDTD.dir

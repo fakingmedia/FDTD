@@ -1,3 +1,0 @@
-"D:\Jetbrains Toolbox\CLion\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\FDTD.dir/objects.a
-"D:\Jetbrains Toolbox\CLion\bin\mingw\bin\ar.exe" qc CMakeFiles\FDTD.dir/objects.a @CMakeFiles\FDTD.dir\objects1.rsp
-"D:\Jetbrains Toolbox\CLion\bin\mingw\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\FDTD.dir/objects.a -Wl,--no-whole-archive -o FDTD.exe -Wl,--out-implib,libFDTD.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\FDTD.dir\linkLibs.rsp

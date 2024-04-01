@@ -7,6 +7,7 @@
 
 #include <cmath>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -34,7 +35,7 @@ protected:
     vector<vector<vector<vector<double>>>> M; //磁流密度(t,x,y,z)
 
     double Vx, Vy, Vz; //仿真空间大小
-    int maxT; //迭代次数上限
+    int maxN; //迭代次数上限
 
     double epsilon; //媒介的介电常数
     double mju; //媒介的磁导率
@@ -42,7 +43,7 @@ protected:
     //double sigmaM; //磁导率
 
     double deltaT; //时间步长
-    double deltaL; //x,y,z轴上的空间距离
+    double deltaX, deltaY, deltaZ; //x,y,z轴上的空间距离
 
     double Sc; //稳定常数
     double eta; //特性阻抗
@@ -55,8 +56,10 @@ public:
 
     bool isStable();
 
-    void updateE();
-    void updateH();
+    virtual void updateE();
+    virtual void updateH();
+
+    virtual void iteration();
 
     void show();
 };
