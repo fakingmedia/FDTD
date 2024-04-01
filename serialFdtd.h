@@ -56,8 +56,8 @@ public:
 
     bool isStable();
 
-    virtual void updateE();
-    virtual void updateH();
+    virtual void serialUpdateE();
+    virtual void serialUpdateH();
 
     virtual void iteration();
 

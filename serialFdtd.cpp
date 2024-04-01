@@ -17,7 +17,7 @@ bool serialFdtd::isStable() {
 
 
 
-void serialFdtd::updateE() {
+void serialFdtd::serialUpdateE() {
     for (int i = 0; i < numX; i++)
         for (int j = 0; j < numY; j++)
             for (int k = 0; k < numZ; k++) {
@@ -30,7 +30,7 @@ void serialFdtd::updateE() {
             }
 }
 
-void serialFdtd::updateH() {
+void serialFdtd::serialUpdateH() {
     for (int i = 0; i < numX; i++)
         for (int j = 0; j < numY; j++)
             for (int k = 0; k < numZ; k++) {

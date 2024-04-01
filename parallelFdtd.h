@@ -8,17 +8,15 @@
 #include "serialFdtd.h"
 #include <omp.h>
 
-
 class parallelFdtd:
         protected serialFdtd {
 private:
-
+    int threadNum;
 public:
-    parallelFdtd();
+    parallelFdtd(int threadNum);
 
     void updateE();
     void updateH();
 };
-
 
 #endif //FDTD_PARALLELFDTD_H
