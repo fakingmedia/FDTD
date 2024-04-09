@@ -7,4 +7,6 @@ add_executable(FDTD main.cpp
         serialFdtd.cpp
         serialFdtd.h
         parallelFdtd.cpp
-        parallelFdtd.h)
+        parallelFdtd.h
+        oneDimensionFdtd.cpp
+        oneDimensionFdtd.h)

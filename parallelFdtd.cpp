@@ -7,7 +7,6 @@
 parallelFdtd::parallelFdtd(int threadNum) {
     this->threadNum = threadNum;
 
-    omp_set_num_threads(this->threadNum);
 }
 
 void parallelFdtd::updateE() {

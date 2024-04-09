@@ -46,8 +46,8 @@ void serialFdtd::serialUpdateH() {
 void serialFdtd::iteration() {
     if (isStable())
         for (int i; i < maxN; i++) {
-            updateE();
-            updateH();
+            serialUpdateE();
+            serialUpdateH();
         }
     else
         cout << "数据不稳定，不允许迭代" << endl;
