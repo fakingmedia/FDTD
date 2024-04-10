@@ -43,7 +43,7 @@ void oneDimensionFdtd::updateH() {
 void oneDimensionFdtd::dataStore(int time) {
     if (time % 10 == 0) {
         ofstream fs;
-        fs.open("D:\\data\\sim." + to_string(time));
+        fs.open("D:\\FDTD\\data\\sim." + to_string(time));
         for (int i = 0; i < size; i++)
             fs << ez[i] << endl;
         fs.close();
