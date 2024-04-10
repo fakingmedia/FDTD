@@ -19,7 +19,7 @@ oneDimensionFdtd::oneDimensionFdtd() {
     //courant1 = c * deltaT / deltaX;
     courant1 = 1;
 
-    maxTime = 1000;
+    maxTime = 200;
     size = 200;
 
     ez.resize(size, 0.);
@@ -29,19 +29,32 @@ oneDimensionFdtd::oneDimensionFdtd() {
 void oneDimensionFdtd::updateE() {
     for(int i = 1; i < size; i++)
         ez[i] = ez[i] + courant1 / mjuR * (hy[i] - hy[i - 1]) / eta0;
+
+    ez[0] = ez[1];
 }
 
 void oneDimensionFdtd::updateH() {
     for(int i = 0; i < size - 1; i++)
         hy[i] = hy[i] + courant1 / epsilonR * (ez[i + 1] - ez[i]) * eta0;
+
+    hy[size - 1] = hy[size - 2];
+}
+
+void oneDimensionFdtd::dataStore(int time) {
+    if (time % 10 == 0) {
+        ofstream fs;
+        fs.open("D:\\data\\sim." + to_string(time));
+        for (int i = 0; i < size; i++)
+            fs << ez[i] << endl;
+        fs.close();
+    }
 }
 
 void oneDimensionFdtd::iteration() {
     for (int i = 0; i < maxTime; i++) {
         updateE();
         updateH();
-        ez[0] = exp(-(i - 30.) * (i - 30.) / 100.);
-        cout << i << "  ";
-        cout << ez[50] << endl;
+        ez[50] += exp(-(i - 30.) * (i - 30.) / 100.);
+        dataStore(i);
     }
 }
