@@ -26,18 +26,23 @@ oneDimensionFdtd::oneDimensionFdtd() {
     hy.resize(size, 0.);
 }
 
-void oneDimensionFdtd::updateE() {
+void oneDimensionFdtd::updateE(int time) {
+    ez[0] = ez[1];
+
     for(int i = 1; i < size; i++)
         ez[i] = ez[i] + courant1 / mjuR * (hy[i] - hy[i - 1]) / eta0;
 
-    ez[0] = ez[1];
+
+    ez[50] += courant1 / mjuR * exp(-(time + 0.5 -(-0.5) - 30.) * (time + 0.5 -(-0.5) - 30.) / 100.) / eta0;
 }
 
-void oneDimensionFdtd::updateH() {
+void oneDimensionFdtd::updateH(int time) {
+    hy[size - 1] = hy[size - 2];
+
     for(int i = 0; i < size - 1; i++)
         hy[i] = hy[i] + courant1 / epsilonR * (ez[i + 1] - ez[i]) * eta0;
 
-    hy[size - 1] = hy[size - 2];
+    hy[49] -= courant1 / epsilonR * exp(-(time - 30.) * (time - 30.) / 100.) * eta0;
 }
 
 void oneDimensionFdtd::dataStore(int time) {
@@ -52,9 +57,9 @@ void oneDimensionFdtd::dataStore(int time) {
 
 void oneDimensionFdtd::iteration() {
     for (int i = 0; i < maxTime; i++) {
-        updateE();
-        updateH();
-        ez[50] += exp(-(i - 30.) * (i - 30.) / 100.);
+        updateE(i);
+        updateH(i);
+
         dataStore(i);
     }
 }

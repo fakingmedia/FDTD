@@ -10,7 +10,6 @@
 #include <cmath>
 #include <fstream>
 
-
 using namespace std;
 
 class oneDimensionFdtd {
@@ -37,8 +36,8 @@ protected:
 public:
     oneDimensionFdtd();
 
-    void updateE();
-    void updateH();
+    void updateE(int time);
+    void updateH(int time);
 
     void dataStore(int time);
 
