@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 size = 200
 
-for i in range(20):
+for i in range(45):
     with open("sim." + str(10*i), "r") as f:
         plt.clf()
         data = f.read()
@@ -14,6 +14,4 @@ for i in range(20):
         plt.ylim((-0.5, 1.5))
         plt.plot(x, y)
         plt.savefig("sim." + str(10*i) + ".png")
-        plt.pause(0.1)
     plt.ioff()
-    plt.show()

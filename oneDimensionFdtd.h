@@ -1,7 +1,3 @@
-//
-// Created by MATEBOOK on 2024/4/9.
-//
-
 #ifndef FDTD_ONEDIMENSIONFDTD_H
 #define FDTD_ONEDIMENSIONFDTD_H
 
@@ -31,7 +27,7 @@ protected:
     double deltaT;//时间步长
     double deltaX;//X轴空间步长
 
-    double courant1;//一维的稳定常数(小于一才稳定)
+    double cdtds;//一维的稳定常数(小于一才稳定)
 
 public:
     oneDimensionFdtd();
