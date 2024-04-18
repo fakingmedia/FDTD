@@ -5,6 +5,8 @@ enum GRIDTYPE {oneGrid, teZGrid, tmZGrid, threeGrid};
 
 class Grid {
 private:
+    double imp0;
+
     double *hx, *chxh, *chxe;
     double *hy, *chyh, *chye;
     double *hz, *chzh, *chze;

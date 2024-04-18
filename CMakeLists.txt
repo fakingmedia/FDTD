@@ -10,4 +10,6 @@ add_executable(FDTD main.cpp
         Grid.h
         update.cpp
         macro.h
+        abc.cpp
+        alloc.h
 )
