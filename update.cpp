@@ -1,6 +1,8 @@
 #include "Grid.h"
 #include "macro.h"
 
+#include <iostream>
+
 void Grid::updateE() {
 
 }
@@ -11,6 +13,7 @@ void Grid::updateH() {
     if (type == oneGrid) {
         for (mm = 0; mm < sizeX - 1; mm++)
             Hy1(mm) = Chyh1(mm) * Hy1(mm) + Chye1(mm) * (Ez1(mm + 1) - Ez1(mm));
+
     } else if (type == tmZGrid) {
         for (mm = 0; mm < sizeX; mm++)
             for (nn = 0; nn < sizeY - 1; nn++)
@@ -19,13 +22,33 @@ void Grid::updateH() {
         for (mm = 0; mm < sizeX - 1; mm++)
             for (nn = 0; nn < sizeY; nn++)
                 Hy2(mm, nn) = Chyh2(mm, nn) * Hy2(mm, nn) + Chye2(mm, nn) * (Ez2(mm + 1, nn) - Ez2(mm, nn));
+
     } else if (type == teZGrid) {
         for (mm = 0; mm < sizeX - 1; mm++)
             for (nn = 0; nn < sizeY - 1; nn++)
-                Hz2(mm, nn) = Chzh2(mm, nn) * Hz2(mm, nn)
-                        - Chze2(mm, nn) * ((Ey2(mm + 1, nn) - Ey2(mm, nn)) - (Ex2(mm, nn + 1) - Ex2(mm, nn)));
-    } else if (Ty)
+                Hz2(mm, nn) = Chzh2(mm, nn) * Hz2(mm, nn) -
+                        Chze2(mm, nn) * ((Ey2(mm + 1, nn) - Ey2(mm, nn)) - (Ex2(mm, nn + 1) - Ex2(mm, nn)));
 
+    } else if (type == threeGrid) {
+        for (mm = 0; mm < sizeX; mm++)
+            for (nn = 0; nn < sizeY - 1; nn++)
+                for (pp = 0; pp < sizeZ - 1; pp++)
+                    Hx(mm, nn, pp) = Chxh(mm, nn, pp) * Hx(mm, nn, pp) + Chxe(mm, nn, pp) *
+                            ((Ey(mm, nn, pp + 1) - Ey(mm, nn, pp)) - (Ez(mm, nn + 1, pp) - Ez(mm, nn, pp)));
 
+        for (mm = 0; mm < sizeX - 1; mm++)
+            for (nn = 0; nn < sizeY; nn++)
+                for (pp = 0; pp < sizeZ - 1; pp++)
+                    Hy(mm, nn, pp) = Chyh(mm, nn, pp) * Hy(mm, nn, pp) + Chye(mm, nn, pp) *
+                            ((Ez(mm + 1, nn, pp) - Ez(mm, nn, pp)) - (Ex(mm, nn, pp + 1) - Ex(mm, nn, pp)));
 
+        for (mm = 0; mm < sizeX - 1; mm++)
+            for (nn = 0; nn < sizeY - 1; nn++)
+                for (pp = 0; pp < sizeZ; pp++)
+                    Hz(mm, nn, pp) = Chzh(mm, nn, pp) * Hz(mm, nn, pp) + Chze(mm, nn, pp) *
+                            ((Ex(mm, nn + 1, pp) - Ex(mm, nn, pp)) - (Ey(mm + 1, nn, pp) - Ey(mm, nn, pp)));
+
+    } else {
+        std::cerr << "updateH: Unknown grid type. Terminating..." << std::endl;
+    }
 }
