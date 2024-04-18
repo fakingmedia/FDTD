@@ -30,12 +30,6 @@ public:
 
     void updateE();
     void updateH();
-    void updateE1d();
-    void updateH1d();
-    void updateE2d();
-    void updateH2d();
-    void updateE3d();
-    void updateH3d();
 
     void serial();
     void parallelCPU();

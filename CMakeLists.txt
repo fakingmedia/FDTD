@@ -9,5 +9,5 @@ add_executable(FDTD main.cpp
         Grid.cpp
         Grid.h
         update.cpp
-        macro.cpp
+        macro.h
 )
