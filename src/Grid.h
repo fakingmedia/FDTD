@@ -30,12 +30,7 @@ public:
     Grid(int type);
     ~Grid();
 
-    void snapshotInit1d();
-    void snapshotInit2d();
-    void snapshotInit3d();
-    void snapshot1d();
-    void snapshot2d();
-    void snapshot3d();
+    void snapshot();
 
     void updateE();
     void updateH();
