@@ -79,30 +79,35 @@ Grid::Grid(int type) {
                     Chzh(mm, nn, pp) = 1.0;
                     Chze(mm, nn, pp) = cdtds / imp0;
                 }
+
+        abcInit();
     }
 
-    abcInit();
+
 }
 
 Grid::~Grid() {
-    abcDelete();
+    if (type == 3) {
+        abcDelete();
 
-    delete[] hx;
-    delete[] chxh;
-    delete[] chxe;
-    delete[] hy;
-    delete[] chyh;
-    delete[] chye;
-    delete[] hz;
-    delete[] chzh;
-    delete[] chze;
-    delete[] ex;
-    delete[] cexh;
-    delete[] cexe;
-    delete[] ey;
-    delete[] ceyh;
-    delete[] ceye;
-    delete[] ez;
-    delete[] cezh;
-    delete[] ceze;
+        delete[] hx;
+        delete[] chxh;
+        delete[] chxe;
+        delete[] hy;
+        delete[] chyh;
+        delete[] chye;
+        delete[] hz;
+        delete[] chzh;
+        delete[] chze;
+        delete[] ex;
+        delete[] cexh;
+        delete[] cexe;
+        delete[] ey;
+        delete[] ceyh;
+        delete[] ceye;
+        delete[] ez;
+        delete[] cezh;
+        delete[] ceze;
+    }
+
 }

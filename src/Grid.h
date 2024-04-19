@@ -7,9 +7,9 @@ class Grid {
 private:
     double imp0;
 
-    int type;
+    int type;//维度的标志
 
-    int time, maxTime;
+    int maxTime;
 
     double *hx, *chxh, *chxe;
     double *hy, *chyh, *chye;
