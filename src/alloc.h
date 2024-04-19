@@ -2,7 +2,6 @@
 #define FDTD_ALLOC_H
 
 #include <iostream>
-using namespace std;
 
 #define ALLOC_1D(PNTR, NUM) \
 PNTR = new double[NUM]; \

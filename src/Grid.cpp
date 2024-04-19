@@ -80,9 +80,13 @@ Grid::Grid(int type) {
                     Chze(mm, nn, pp) = cdtds / imp0;
                 }
     }
+
+    abcInit();
 }
 
 Grid::~Grid() {
+    abcDelete();
+
     delete[] hx;
     delete[] chxh;
     delete[] chxe;

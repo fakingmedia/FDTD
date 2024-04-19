@@ -63,3 +63,20 @@
 #define Ez(M, N, P) ez[((M) * sizeY + N) * (sizeZ - 1) + P]
 #define Cezh(M, N, P) cezh[((M) * sizeY + N) * (sizeZ - 1) + P]
 #define Ceze(M, N, P) ceze[((M) * sizeY + N) * (sizeZ - 1) + P]
+
+
+//ABC
+#define Eyx0(N, P) eyx0[(N) * (sizeZ) + (P)]
+#define Ezx0(N, P) ezx0[(N) * (sizeZ - 1) + (P)]
+#define Eyx1(N, P) eyx1[(N) * (sizeZ) + (P)]
+#define Ezx1(N, P) ezx1[(N) * (sizeZ - 1) + (P)]
+
+#define Exy0(M, P) exy0[(M) * (sizeZ) + (P)]
+#define Ezy0(M, P) ezy0[(M) * (sizeZ - 1) + (P)]
+#define Exy1(M, P) exy1[(M) * (sizeZ) + (P)]
+#define Ezy1(M, P) ezy1[(M) * (sizeZ - 1) + (P)]
+
+#define Exz0(M, N) exz0[(M) * (sizeY) + (N)]
+#define Eyz0(M, N) eyz0[(M) * (sizeY - 1) + (N)]
+#define Exz1(M, N) exz1[(M) * (sizeY) + (N)]
+#define Eyz1(M, N) eyz1[(M) * (sizeY - 1) + (N)]

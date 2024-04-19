@@ -8,8 +8,8 @@ add_executable(FDTD src/main.cpp
         src/Grid.h
         src/update.cpp
         src/macro.h
-        src/ABC.cpp
+        src/abc.cpp
         src/alloc.h
-        src/ABC.h
         src/snapshot.cpp
+        src/iterator.cpp
 )

@@ -49,35 +49,41 @@ cmake_ninja_workdir = D$:/FDTD/cmake-build-debug/
 
 build cmake_object_order_depends_target_FDTD: phony || CMakeFiles/FDTD.dir
 
-build CMakeFiles/FDTD.dir/main.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/main.cpp || cmake_object_order_depends_target_FDTD
-  DEP_FILE = CMakeFiles\FDTD.dir\main.cpp.obj.d
+build CMakeFiles/FDTD.dir/src/main.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/src/main.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\FDTD.dir
-  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir\src
 
-build CMakeFiles/FDTD.dir/Grid.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/Grid.cpp || cmake_object_order_depends_target_FDTD
-  DEP_FILE = CMakeFiles\FDTD.dir\Grid.cpp.obj.d
+build CMakeFiles/FDTD.dir/src/Grid.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/src/Grid.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\src\Grid.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\FDTD.dir
-  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir\src
 
-build CMakeFiles/FDTD.dir/update.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/update.cpp || cmake_object_order_depends_target_FDTD
-  DEP_FILE = CMakeFiles\FDTD.dir\update.cpp.obj.d
+build CMakeFiles/FDTD.dir/src/update.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/src/update.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\src\update.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\FDTD.dir
-  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir\src
 
-build CMakeFiles/FDTD.dir/ABC.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/ABC.cpp || cmake_object_order_depends_target_FDTD
-  DEP_FILE = CMakeFiles\FDTD.dir\ABC.cpp.obj.d
+build CMakeFiles/FDTD.dir/src/ABC.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/src/ABC.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\src\ABC.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\FDTD.dir
-  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir\src
 
-build CMakeFiles/FDTD.dir/snapshot.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/snapshot.cpp || cmake_object_order_depends_target_FDTD
-  DEP_FILE = CMakeFiles\FDTD.dir\snapshot.cpp.obj.d
+build CMakeFiles/FDTD.dir/src/snapshot.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/src/snapshot.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\src\snapshot.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\FDTD.dir
-  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir\src
+
+build CMakeFiles/FDTD.dir/src/iterator.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D$:/FDTD/src/iterator.cpp || cmake_object_order_depends_target_FDTD
+  DEP_FILE = CMakeFiles\FDTD.dir\src\iterator.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\FDTD.dir
+  OBJECT_FILE_DIR = CMakeFiles\FDTD.dir\src
 
 
 # =============================================================================
@@ -87,7 +93,7 @@ build CMakeFiles/FDTD.dir/snapshot.cpp.obj: CXX_COMPILER__FDTD_unscanned_Debug D
 #############################################
 # Link the executable FDTD.exe
 
-build FDTD.exe: CXX_EXECUTABLE_LINKER__FDTD_Debug CMakeFiles/FDTD.dir/main.cpp.obj CMakeFiles/FDTD.dir/Grid.cpp.obj CMakeFiles/FDTD.dir/update.cpp.obj CMakeFiles/FDTD.dir/ABC.cpp.obj CMakeFiles/FDTD.dir/snapshot.cpp.obj
+build FDTD.exe: CXX_EXECUTABLE_LINKER__FDTD_Debug CMakeFiles/FDTD.dir/src/main.cpp.obj CMakeFiles/FDTD.dir/src/Grid.cpp.obj CMakeFiles/FDTD.dir/src/update.cpp.obj CMakeFiles/FDTD.dir/src/ABC.cpp.obj CMakeFiles/FDTD.dir/src/snapshot.cpp.obj CMakeFiles/FDTD.dir/src/iterator.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\FDTD.dir

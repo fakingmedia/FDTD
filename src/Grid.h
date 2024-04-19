@@ -7,6 +7,10 @@ class Grid {
 private:
     double imp0;
 
+    int type;
+
+    int time, maxTime;
+
     double *hx, *chxh, *chxe;
     double *hy, *chyh, *chye;
     double *hz, *chzh, *chze;
@@ -14,10 +18,13 @@ private:
     double *ey, *ceyh, *ceye;
     double *ez, *cezh, *ceze;
 
-    int sizeX, sizeY, sizeZ;
-    int time, maxTime;
-    int type;
     double cdtds;
+
+    int sizeX, sizeY, sizeZ;
+
+    //abc
+    double abcoef;
+    double *exy0, *exy1, *exz0, *exz1, *eyx0, *eyx1, *eyz0, *eyz1, *ezx0, *ezx1, *ezy0, *ezy1;
 
 public:
     Grid(int type);
@@ -36,6 +43,10 @@ public:
     void serial();
     void parallelCPU();
     void parallelGPU();
+
+    void abcInit();
+    void abcDelete();
+    void abc();
 
 };
 
