@@ -3,13 +3,13 @@ project(FDTD)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(FDTD main.cpp
-        Grid.cpp
-        Grid.h
-        update.cpp
-        macro.h
-        ABC.cpp
-        alloc.h
-        ABC.h
-        snapshot.cpp
+add_executable(FDTD src/main.cpp
+        src/Grid.cpp
+        src/Grid.h
+        src/update.cpp
+        src/macro.h
+        src/ABC.cpp
+        src/alloc.h
+        src/ABC.h
+        src/snapshot.cpp
 )
