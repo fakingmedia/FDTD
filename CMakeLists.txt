@@ -12,4 +12,5 @@ add_executable(FDTD src/main.cpp
         src/alloc.h
         src/snapshot.cpp
         src/iterator.cpp
+        src/ezinc.h
 )

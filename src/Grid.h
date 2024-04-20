@@ -30,7 +30,7 @@ public:
     Grid(int type);
     ~Grid();
 
-    void snapshot();
+    void snapshot(int temporalStride, int time);
 
     void updateE();
     void updateH();

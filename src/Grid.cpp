@@ -5,6 +5,9 @@
 
 Grid::Grid(int type) {
     imp0 = 376.730313461;
+
+    this->type = type;
+
     int mm, nn, pp;
 
     if (type == 3) {
@@ -87,6 +90,7 @@ Grid::Grid(int type) {
 }
 
 Grid::~Grid() {
+
     if (type == 3) {
         abcDelete();
 
